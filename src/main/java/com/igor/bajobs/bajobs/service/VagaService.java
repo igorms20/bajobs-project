@@ -1,5 +1,6 @@
 package com.igor.bajobs.bajobs.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -59,6 +60,15 @@ public class VagaService {
     }
 
     public List<String> getAllLocais() {
-        return vagaRepository.getLocais();
+        List<Vaga> vagas = findAll();
+        List<String> locais = new ArrayList<>();
+
+        vagas.forEach(vaga -> {
+            if (!locais.contains(vaga.getLocal())) {
+                locais.add(vaga.getLocal());
+            }
+        });
+
+        return locais;
     }
  }
