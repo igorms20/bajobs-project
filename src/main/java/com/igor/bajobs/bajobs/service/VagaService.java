@@ -47,6 +47,7 @@ public class VagaService {
         return vagaRepository.save(vaga);
     }
 
+    @Transactional
     public Vaga update(Vaga vaga, Long jobId) {
         if (vagaRepository.findById(jobId).isEmpty()) {
             throw new JobNotFoundException("Vaga não encontrada");
@@ -55,5 +56,9 @@ public class VagaService {
         vaga.setId(jobId);
         return vagaRepository.save(vaga);
 
+    }
+
+    public List<String> getAllLocais() {
+        return vagaRepository.getLocais();
     }
  }
