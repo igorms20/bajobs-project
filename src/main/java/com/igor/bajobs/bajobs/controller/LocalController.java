@@ -21,7 +21,7 @@ public class LocalController {
         this.vagaService = vagaService;
     }
     
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<String>> getLocais() {
         return ResponseEntity.ok(vagaService.getAllLocais());
 
