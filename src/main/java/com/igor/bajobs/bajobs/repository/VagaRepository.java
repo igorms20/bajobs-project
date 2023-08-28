@@ -11,7 +11,7 @@ import com.igor.bajobs.bajobs.model.Vaga;
 @Repository
 public interface VagaRepository extends JpaRepository<Vaga, Long> {
 
-    @Query("SELECT DISTINCT local from vaga")
+    @Query("SELECT DISTINCT v.local FROM Vaga v")
     public List<String> getLocais();
     
 }

@@ -23,7 +23,6 @@ public class LocalController {
     
     @GetMapping()
     public ResponseEntity<List<String>> getLocais() {
-
         return ResponseEntity.ok(vagaService.getAllLocais());
 
     }
